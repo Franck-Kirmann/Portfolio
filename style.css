@@ -351,15 +351,6 @@ header .langue-toggle {
   animation: error 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-@keyframes Loader {
-  0% {
-    background-position: 200% 0%;
-  }
-  100% {
-    background-position: 0% 100%;
-  }
-}
-
 .ContactAndSocial .Contact #Loader {
   background-color: rgba(0, 0, 0, 0.9);
   border-radius: 20px;
@@ -641,5 +632,14 @@ footer p {
   }
   100% {
     transform: translateX(0);
+  }
+}
+
+@keyframes Loader {
+  0% {
+    background-position: 200% 0%;
+  }
+  100% {
+    background-position: 0% 100%;
   }
 }
