@@ -1,0 +1,645 @@
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: linear-gradient(to right, #000000 50%, #202020 85%, #3a3434);
+  margin: 0;
+  padding-top: 60px;
+  position: relative;
+  font-family: "Protest Revolution", serif;
+}
+
+body::after {
+  content: "";
+  box-shadow: inset -15px -15px 100px black;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 1;
+  pointer-events: none;
+}
+
+a {
+  color: #a8a8a8;
+  margin: 10px 10px;
+  text-decoration: none;
+  padding: 10px 0;
+}
+
+a:hover {
+  color: white;
+}
+
+p {
+  margin: 5%;
+  color: white;
+}
+
+h2 {
+  color: #ffffff;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+section {
+  scroll-margin-top: 100px;
+}
+
+/*********************** Header **********************/
+
+header {
+  position: fixed;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  padding: 15px 15%;
+  display: flex;
+  width: 70%;
+  justify-content: space-between;
+  padding-top: 20px;
+  background: linear-gradient(to right, #000000 50%, #202020 85%, #3a3434);
+  animation: Header 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+header .nav {
+  display: flex;
+  z-index: 2;
+}
+
+header .logo {
+  position: relative;
+  z-index: 2;
+  width: auto;
+  height: 50px;
+  filter: drop-shadow(0 0 5px #ff0000c2) drop-shadow(0 0 2px #ff0000);
+}
+
+header h1 {
+  color: #ffffff;
+}
+
+header .langue-toggle {
+  cursor: pointer;
+  background: linear-gradient(#545353, #363535, #303030);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  width: 75px;
+  margin: 4px 0;
+}
+
+/*********************** Presentation **********************/
+.Presentation-card {
+  background: linear-gradient(to right, #0e0d0d 50%, #252525);
+  border-radius: 20px;
+  padding: 0;
+  width: 70%;
+  text-align: center;
+  color: #ffffff;
+  border: 1px solid #646464;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.4), inset 0 0 50px black;
+  margin: auto;
+  margin-top: 3%;
+  animation: Presentation 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.Presentation-card h1 {
+  margin: 1% 5%;
+}
+
+.Presentation-card p {
+  margin: 1% 5%;
+  font-family: "Chakra Petch", sans-serif;
+}
+
+/*********************** Project And Competence **********************/
+
+.ProjectAndCompetence {
+  display: flex;
+  width: 70%;
+  margin: auto;
+  margin-top: 2%;
+  gap: 25px;
+  align-items: stretch;
+}
+
+.ProjectAndCompetence .Project-card {
+  background: linear-gradient(to right, #0e0d0d 55%, #252525);
+  border-radius: 20px;
+  padding: 20px;
+  width: 84%;
+  text-align: center;
+  color: #ffffff;
+  border: 1px solid #646464;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.4), inset 0 0 50px black;
+  animation: Project 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.ProjectAndCompetence .Project-card .Card-Contenair {
+  display: flex;
+  align-items: stretch;
+}
+
+.ProjectAndCompetence .Project-card .Card-Contenair .Card {
+  width: 90%;
+  border: 1px solid #646464;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.4), inset 0 0 50px black;
+  border-radius: 25px;
+  margin: 1%;
+  padding: 10px 0;
+  background: linear-gradient(to right, #0e0d0d 60%, #252525);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.2s ease-in;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .ProjectAndCompetence .Project-card .Card-Contenair .Card:hover {
+    flex: 1.5;
+  }
+
+  .ProjectAndCompetence .Project-card .Card-Contenair .Card:not(:hover) {
+    flex: 0.8;
+  }
+}
+
+.ProjectAndCompetence .Project-card .Card-Contenair .Card p {
+  font-family: "Chakra Petch", sans-serif;
+}
+
+.ProjectAndCompetence .Project-card img {
+  width: 100%;
+  height: auto;
+}
+
+.ProjectAndCompetence .Project-card .Card .Card-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 5px;
+  padding: 10px 0;
+}
+
+.ProjectAndCompetence .Project-card .Card .Card-button a {
+  display: inline-block;
+  font-family: "Chakra Petch", sans-serif;
+  font-size: 14px;
+  text-align: center;
+  background: linear-gradient(#545353, #363535, #303030);
+  color: white;
+  width: 75%;
+  margin: 0;
+  border: 1px solid #222;
+  border-radius: 50px;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: inset 0 2px 1px rgba(0, 0, 0.35), 0 5px 5px rgba(0, 0, 0.35),
+    0 5px 5px rgba(0, 0, 0.35);
+  padding: 15px 10px;
+}
+
+.ProjectAndCompetence .Project-card .Card .Card-button a:active {
+  box-shadow: inset 2px 2px 10px rgba(0, 0, 0.35),
+    inset 2px 4px 2px rgba(0, 0, 0.35), inset 2px 2px 2px rgba(0, 0, 0.35),
+    0 5px 5px rgba(0, 0, 0.35);
+}
+
+.ProjectAndCompetence .competence-card {
+  background: linear-gradient(to right, #0e0d0d 50%, #252525);
+  border-radius: 20px;
+  padding: 20px;
+  width: 16%;
+  text-align: center;
+  color: #ffffff;
+  border: 1px solid #646464;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.4), inset 0 0 50px black;
+  animation: Competence 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.ProjectAndCompetence .competence-card .competences {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 20px;
+  font-family: "Chakra Petch", sans-serif;
+  height: 85%;
+}
+
+.ProjectAndCompetence .competence-card .competences .competence-item {
+  background: linear-gradient(to right, #0e0d0d 50%, #3f3f3f);
+  border: 1px solid #646464;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.4), inset 0 0 50px black;
+  margin-top: 20px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  color: #ffffff;
+  font-size: 1rem;
+  width: 60%;
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  align-items: center;
+  flex-direction: column;
+}
+.ProjectAndCompetence .competence-card .competences .competence-item i {
+  font-size: 25px;
+}
+
+.ProjectAndCompetence .competence-card .competences .competence-item p {
+  font-size: 15px;
+}
+/*********************** Contact et Social **********************/
+
+.ContactAndSocial {
+  display: flex;
+  gap: 25px;
+  width: 70%;
+  margin: auto;
+  margin-top: 2%;
+}
+
+.ContactAndSocial .Social {
+  background: linear-gradient(to right, #0e0d0d 50%, #252525);
+  border-radius: 20px;
+  padding: 10px;
+  width: 25%;
+  text-align: center;
+  color: #ffffff;
+  border: 1px solid #646464;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.4), inset 0 0 50px black;
+  display: flex;
+  flex-direction: column;
+  animation: Social 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.ContactAndSocial .Social a {
+  font-size: 30px;
+  margin: 0;
+}
+
+.ContactAndSocial .Social a .SocialText {
+  font-size: 20px;
+  font-style: normal;
+  font-family: Arial, sans-serif;
+  margin-top: 5%;
+}
+
+.ContactAndSocial .Contact {
+  position: relative;
+  background: linear-gradient(to right, #0e0d0d 50%, #252525);
+  border-radius: 20px;
+  padding: 10px;
+  width: 75%;
+  text-align: center;
+  color: #ffffff;
+  border: 1px solid #646464;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.4), inset 0 0 50px black;
+  animation: Contact 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.ContactAndSocial .Contact .ContactMe .contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.ContactAndSocial .Contact .ContactMe label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.ContactAndSocial .Contact .ContactMe input,
+.ContactAndSocial .Contact .ContactMe textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.ContactAndSocial .Contact .ContactMe input[type="text"],
+.ContactAndSocial .Contact .ContactMe input[type="email"],
+.ContactAndSocial .Contact .ContactMe textarea {
+  width: 80%;
+  margin: auto;
+  resize: none;
+}
+
+.ContactAndSocial .Contact .ContactMe button {
+  width: 80%;
+  margin: auto;
+  background: linear-gradient(to right, #0e0d0d 50%, #252525);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.4), inset 0 0 50px black;
+  color: white;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.ContactAndSocial .Contact .ContactMe input.error,
+.ContactAndSocial .Contact .ContactMe textarea.error {
+  border: 1px solid red;
+  box-shadow: inset 0 0 10px rgba(255, 0, 0, 0.3), 0 0 20px rgba(255, 0, 0, 1);
+  animation: error 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+@keyframes Loader {
+  0% {
+    background-position: 200% 0%;
+  }
+  100% {
+    background-position: 0% 100%;
+  }
+}
+
+.ContactAndSocial .Contact #Loader {
+  background-color: rgba(0, 0, 0, 0.9);
+  border-radius: 20px;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#Loader p {
+  font-size: 40px;
+  font-weight: bold;
+  text-transform: uppercase;
+  position: absolute;
+  overflow: hidden;
+}
+
+.LoaderTexte1 {
+  color: transparent;
+  -webkit-text-stroke: 2px black;
+}
+
+.LoaderTexte2 {
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(51, 51, 51, 1) 40%,
+    rgba(255, 255, 255, 1) 50%,
+    rgba(51, 51, 51, 1) 60%,
+    rgba(0, 0, 0, 1) 100%
+  );
+  background-size: 200% 200%;
+  animation: Loader 3s infinite linear;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.ContactAndSocial .Contact #Modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1;
+  border-radius: 20px;
+}
+
+.ContactAndSocial .Contact #Modal button {
+  border: none;
+  background-color: transparent;
+  color: white;
+  font-size: 40px;
+  padding: 10px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.ContactAndSocial .Contact #Modal button:hover {
+  border: none;
+  background-color: transparent;
+  color: red;
+  text-shadow: 0 0 5px red;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+.ContactAndSocial .Contact #Modal .ContactSuccess,
+.ContactAndSocial .Contact #Modal .ContactError {
+  position: absolute;
+  border-radius: 15px;
+  top: 25%;
+  left: 25%;
+  width: 50%;
+  height: 50%;
+  background-color: rgba(0, 0, 0, 1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+  font-size: 24px;
+}
+
+/*********************** Footer **********************/
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1%;
+  margin-top: 2%;
+  gap: 15px;
+  height: 100px;
+  box-shadow: 0 0 25px #000000, inset 0 0 40px rgba(58, 52, 52);
+  border-radius: 5% 5% 0 0;
+}
+
+footer img {
+  height: 40px;
+}
+
+footer p {
+  margin: 0;
+}
+
+/********************************* Media Tablette *********************************/
+@media (min-width: 769px) and (max-width: 1024px) {
+  header {
+    width: 90%;
+    padding: 10px 5%;
+  }
+
+  .Presentation-card {
+    width: 90%;
+  }
+
+  .ProjectAndCompetence {
+    width: 90%;
+  }
+
+  .ContactAndSocial {
+    width: 90%;
+  }
+}
+
+/********************************* Media Mobile *********************************/
+@media (max-width: 768px) {
+  section {
+    scroll-margin-top: 79px;
+  }
+
+  header {
+    width: 95%;
+    padding: 10px 2.5%;
+  }
+
+  .Presentation-card {
+    width: 95%;
+    padding: 10px 0;
+    margin-top: 20px;
+  }
+
+  .ProjectAndCompetence {
+    width: 95%;
+    flex-direction: column;
+  }
+
+  .ProjectAndCompetence .Project-card {
+    width: auto;
+  }
+
+  .ProjectAndCompetence .Project-card .Card-Contenair {
+    width: auto;
+    flex-direction: column;
+  }
+  .ProjectAndCompetence .Project-card .Card-Contenair .Card {
+    width: auto;
+  }
+  .ProjectAndCompetence .competence-card {
+    width: auto;
+  }
+
+  .ContactAndSocial {
+    width: 95%;
+    flex-direction: column;
+    padding: 10px 2.5%;
+  }
+
+  .ContactAndSocial .Contact {
+    width: auto;
+  }
+
+  .ContactAndSocial .Social {
+    width: auto;
+  }
+}
+
+/********************************* Animation *********************************/
+@keyframes Header {
+  0% {
+    transform: translateY(-500px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes Presentation {
+  0% {
+    transform: translateY(-500px);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes Project {
+  0% {
+    transform: translateX(-500px);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes Competence {
+  0% {
+    transform: translateX(500px);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes Contact {
+  0% {
+    transform: translateX(500px);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes Social {
+  0% {
+    transform: translateX(-500px);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes error {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(10px);
+  }
+  50% {
+    transform: translateX(-10px);
+  }
+  75% {
+    transform: translateX(10px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
