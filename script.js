@@ -105,6 +105,25 @@ document.getElementById("toggleLangue").addEventListener("click", () => {
   applyLanguage(currentLang);
 });
 
+////////////////////////////////////////////////// Menu //////////////////////////////////////////////////////
+document.getElementById("menuToggle").addEventListener("click", function () {
+  document.querySelector(".nav").classList.toggle("open");
+});
+
+const nav = document.querySelector(".nav");
+document.addEventListener("click", function (event) {
+  if (!nav.contains(event.target)) {
+    nav.classList.remove("open");
+  }
+});
+
+// Fermer le menu si on clique sur un lien
+document.querySelectorAll(".nav a").forEach((link) => {
+  link.addEventListener("click", function () {
+    nav.classList.remove("open");
+  });
+});
+
 ////////////////////////////////////////////////// Transition ////////////////////////////////////////////////
 const cards = document.querySelectorAll(".Card");
 

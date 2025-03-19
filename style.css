@@ -80,14 +80,21 @@ header h1 {
   color: #ffffff;
 }
 
+header .nav .menu-toggle {
+  display: none;
+}
+
 header .langue-toggle {
   cursor: pointer;
   background: linear-gradient(#545353, #363535, #303030);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.4), inset 0 0 10px black,
+    inset 0 1px 10px black;
   color: white;
   border: none;
   border-radius: 5px;
   width: 75px;
-  margin: 4px 0;
+  padding: 5px;
+  margin: 5px 0;
 }
 
 /*********************** Presentation **********************/
@@ -485,13 +492,39 @@ footer p {
 
 /********************************* Media Mobile *********************************/
 @media (max-width: 768px) {
+  body {
+    padding-top: 80px;
+  }
   section {
-    scroll-margin-top: 79px;
+    scroll-margin-top: 100px;
   }
 
   header {
-    width: 95%;
-    padding: 10px 2.5%;
+    width: 85%;
+    padding: 15px 7.5%;
+  }
+
+  header .nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  header .nav .menu-toggle {
+    display: block;
+    background: linear-gradient(#545353, #363535, #303030);
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.4), inset 0 0 5px black;
+    border-radius: 50%;
+    padding: 12px 15px;
+    border: none;
+    color: white;
+  }
+
+  header .nav a {
+    display: none;
+  }
+
+  header .nav.open a {
+    display: block;
   }
 
   .Presentation-card {
