@@ -51,7 +51,7 @@ section {
 
 header {
   position: fixed;
-  z-index: 0;
+  z-index: 1;
   top: 0;
   left: 0;
   padding: 15px 15%;
@@ -493,10 +493,10 @@ footer p {
 /********************************* Media Mobile *********************************/
 @media (max-width: 768px) {
   body {
-    padding-top: 80px;
+    padding-top: 90px;
   }
   section {
-    scroll-margin-top: 100px;
+    scroll-margin-top: 110px;
   }
 
   header {
