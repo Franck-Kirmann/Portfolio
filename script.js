@@ -24,7 +24,6 @@ const translations = {
     "social.title": "Mes Résseaux",
     "contact.title": "Prendre contact",
     "contact.send": "Envoyer",
-    "contact.name": "Votre nom",
     "contact.email": "Votre e-mail",
     "contact.subject": "Le sujet de votre message",
     "contact.message": "Votre message",
@@ -57,7 +56,6 @@ const translations = {
     "social.title": "My Socials Media",
     "contact.title": "Contact Me",
     "contact.send": "Send",
-    "contact.name": "Your name",
     "contact.email": "Your email",
     "contact.subject": "Subject of your message",
     "contact.message": "Your message",
@@ -143,129 +141,3 @@ function updateFontSize() {
 updateFontSize();
 
 window.addEventListener("resize", updateFontSize);
-
-////////////////////////////////////////////////// Loader /////////////////////////////////////////////////////
-var Loader = document.getElementById("Loader");
-
-function LoaderStart() {
-  Loader.style.display = "flex";
-}
-
-function LoaderEnd() {
-  Loader.style.display = "none";
-}
-
-////////////////////////////////////////////////// Modal //////////////////////////////////////////////////////
-
-const Modal = document.querySelector("#Modal");
-const CloseBtns = document.querySelectorAll(".Close");
-const ContactSuccess = document.querySelector(".ContactSuccess");
-const ContactError = document.querySelector(".ContactError");
-const ErrorMessage = document.getElementById("error");
-
-function ModalSuccess() {
-  Modal.style.display = "flex";
-  ContactSuccess.style.display = "flex";
-}
-
-function ModalError() {
-  Modal.style.display = "flex";
-  ContactError.style.display = "flex";
-}
-
-function closeModal() {
-  Modal.style.display = "none";
-  ContactSuccess.style.display = "none";
-  ContactError.style.display = "none";
-}
-
-CloseBtns.forEach((btn) => {
-  btn.addEventListener("click", closeModal);
-});
-
-window.addEventListener("click", function (event) {
-  if (event.target === Modal) {
-    Modal.style.display = "none";
-    ContactSuccess.style.display = "none";
-    ContactError.style.display = "none";
-  }
-});
-
-////////////////////////////////////////////////// mail ///////////////////////////////////////////////////////
-const SendBtn = document.getElementById("send");
-
-SendBtn.addEventListener("click", function (e) {
-  e.preventDefault();
-
-  var name = document.getElementById("name").value;
-  var email = document.getElementById("email").value;
-  var subject = document.getElementById("subject").value;
-  var message = document.getElementById("message").value;
-
-  removeErrorClasses();
-
-  let valid = true;
-
-  if (!name) {
-    document.getElementById("name").classList.add("error");
-    valid = false;
-  }
-  if (!email) {
-    document.getElementById("email").classList.add("error");
-    valid = false;
-  }
-  if (!subject) {
-    document.getElementById("subject").classList.add("error");
-    valid = false;
-  }
-  if (!message) {
-    document.getElementById("message").classList.add("error");
-    valid = false;
-  }
-
-  if (valid) {
-    var data = {
-      service_id: "service_b3diujl",
-      template_id: "template_zz9mqrc",
-      user_id: "XYUyuMVkvvbHTsejO",
-      template_params: {
-        name: name,
-        email: email,
-        subject: subject,
-        message: message,
-      },
-    };
-
-    LoaderStart();
-    $.ajax("https://api.emailjs.com/api/v1.0/email/send", {
-      type: "POST",
-      data: JSON.stringify(data),
-      contentType: "application/json",
-    })
-      .done(function () {
-        LoaderEnd();
-        ModalSuccess();
-      })
-      .fail(function (error) {
-        LoaderEnd();
-        ModalError();
-        ErrorMessage.value = error;
-      });
-  }
-});
-
-function removeErrorClasses() {
-  const fields = ["name", "email", "subject", "message"];
-  fields.forEach((fieldId) => {
-    const field = document.getElementById(fieldId);
-    field.addEventListener("input", function () {
-      if (field.value.trim() !== "") {
-        field.classList.remove("error");
-      } else {
-        field.classList.add("error");
-      }
-    });
-  });
-}
-
-removeErrorClasses();
