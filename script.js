@@ -124,25 +124,6 @@ document.querySelectorAll(".nav a").forEach((link) => {
   });
 });
 
-////////////////////////////////////////////////// Transition ////////////////////////////////////////////////
-const cards = document.querySelectorAll(".Card");
-
-cards.forEach((card) => {
-  let initialHeight = card.clientHeight;
-
-  card.addEventListener("transitionstart", () => {
-    cards.forEach((card) => {
-      card.style.height = initialHeight + 20 + "px";
-    });
-  });
-
-  card.addEventListener("transitionend", () => {
-    cards.forEach((card) => {
-      card.style.height = "";
-    });
-  });
-});
-
 ////////////////////////////////////////////////// taille police ////////////////////////////////////////////////////////
 const pElements = document.querySelectorAll(".Card p");
 

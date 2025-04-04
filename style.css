@@ -160,18 +160,7 @@ header .langue-toggle {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  transition: all 0.2s ease-in;
   overflow: hidden;
-}
-
-@media (min-width: 768px) {
-  .ProjectAndCompetence .Project-card .Card-Contenair .Card:hover {
-    flex: 1.5;
-  }
-
-  .ProjectAndCompetence .Project-card .Card-Contenair .Card:not(:hover) {
-    flex: 0.8;
-  }
 }
 
 .ProjectAndCompetence .Project-card .Card-Contenair .Card p {
